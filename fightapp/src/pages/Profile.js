@@ -10,7 +10,6 @@ function Profile() {
             
         </div>
     )
-    )
 }
 
 export default Profile
