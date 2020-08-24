@@ -3,7 +3,7 @@ import "./style.css"
 
 function Stats() {
     return(
-        <div>
+        <div class="stats">
             <ul class="stats-ul">
                 <li class="stat-item">
                     <span><strong>Weight: </strong> 200lbs </span>
