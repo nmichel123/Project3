@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useReducer, useRef } from "react";
+import "./style.css"
 
-function ProfilePic() {
+function ProfilePic(props) {
     return(
         <div>
             <img src={props.user.image} />
