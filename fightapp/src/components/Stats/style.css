@@ -1,0 +1,19 @@
+.stats {
+    width: 420px;
+    padding: 10px;
+    border: 2px solid lightcoral;
+    border-radius: 15px;
+}
+
+.stats-ul {
+    list-style: none outside none;
+    padding: 20px 40px;
+    margin: 10px 20px;
+    border: 1px solid transparent;
+}
+
+.stats-ul > li {
+    color: #666;
+    padding: 10px 40px;
+    margin: 10px auto;
+}
