@@ -39,6 +39,7 @@ class Match extends Component {
   };
 
   loadNextFight = () => {
+
     API.getFight(Math.floor((2 ** 32) * Math.random()))
       .then(res =>
         this.setState({
@@ -53,7 +54,9 @@ class Match extends Component {
       <div>
         <h1 className="text-center">Make New Friends</h1>
         <h3 className="text-center">
+
           Fight!
+
         </h3>
         <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
         <h1 className="text-center">
