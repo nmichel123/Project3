@@ -1,0 +1,59 @@
+.form-group {
+    position: fixed;
+    top: 80px;
+    left: 25%;
+    height: 420px;
+    margin: 40px auto;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.form { 
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-group > input {
+    padding: 12 20px;
+    margin: 8px 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 36px;
+    width: 100%;
+}
+
+.weight-input, .height-input {
+    width: 48px;
+    margin-right: 10px;
+}
+
+.close-form {
+    float: left;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    padding: 20px 0px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+    padding: 20px 0px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }

@@ -1,7 +1,106 @@
 :root {
-    color: #333;
+    background: black;
 }
 
 h1, h2, h3 {
     text-align: center;
+    color: white;
 }
+/* Home page styling */
+.home-header {
+  color: rgb(255, 13, 191);
+  line-height: 420px;
+  font-size: 96px;
+  font-family: 'Graduate', cursive;
+  text-shadow: 2px 5px black;
+  margin-left: 120px;
+}
+
+.rumble:hover {
+    animation: shake 420ms;
+    animation-iteration-count: infinite;
+  }
+
+.enlarge {
+  transition: 1420ms ease-in-out;
+}
+
+.enlarge:hover {
+    animation: enlarge 1420ms;
+}
+
+.hide {
+  display: none;
+  transition: 420ms ease-in-out;
+}
+
+.home-btns {
+  margin: 40px auto;
+  bottom: 20%;
+  width: 420px;
+  height: 80px;
+  background: transparent;
+}
+
+.login, .sign-up {
+  color: rgb(44, 43, 29);
+  width: 200px;
+  font-size: 18px;
+  padding: 20px 40px;
+  margin: 40px 20px;
+  border: 2px solid transparent;
+  background: white;
+  cursor: pointer;
+  text-align: center;
+  transition: 420ms ease-in-out;
+}
+
+.login:hover, .sign-up:hover {
+  color: white;
+  border: rgb(255, 13, 191) 2px solid;
+  background: rgb(0, 0, 0, 0.75);
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 0px 100px 25px black;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  box-shadow: inset 0 0 1000px black;
+}
+
+/* Profile Page Styling */
+
+.fight-card {
+  color: #333;
+  justify-content: center;
+  background: rgb(256, 256, 256, 0.85);
+  width: 640px;
+  margin: 10px auto;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 100px 25px black;
+}
+
+/* Animation */
+ @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  @keyframes enlarge {
+      0%{ transform: scale(1); }
+      100% { transform: scale(1.25); }
+  }

@@ -1,8 +1,8 @@
-
 import React, { Component } from "react";
-// import API from "../utils/API";
+import API from "../utils/API";
+import Card from "../components/Card"
 import ProfilePic from "../components/ProfilePic/index";
-import MatchAlert from "../components/MatchAlert/index";
+
 
 class Match extends Component {
   state = {
@@ -39,7 +39,8 @@ class Match extends Component {
   };
 
   loadNextFight = () => {
-    API.getRandomFight()
+
+    API.getFight(Math.floor((2 ** 32) * Math.random()))
       .then(res =>
         this.setState({
           image: res.data.message
@@ -53,19 +54,17 @@ class Match extends Component {
       <div>
         <h1 className="text-center">Make New Friends</h1>
         <h3 className="text-center">
-          Thumbs up on any pups you'd like to meet!
+
+          Fight!
+
         </h3>
         <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
         <h1 className="text-center">
           Made friends with {this.state.matchCount} pups so far!
         </h1>
-        <MatchAlert style={{ opacity: this.state.match ? 1 : 0 }} type="success">
-          Yay! That Pup Liked You Too!!!
-        </MatchAlert>
       </div>
     );
   }
 }
 
 export default Match;
-
