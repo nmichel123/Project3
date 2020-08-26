@@ -3,18 +3,19 @@ import axios from "axios";
 export default {
   // Gets all fighters
   getFighters: function() {
-    return axios.get("/api/books");
+    return axios.get("/api/fighter");
   },
   // Gets the fighter with the given id
   getFighter: function(id) {
-    return axios.get("/api/books/" + id);
+    return axios.get("/api/fighter/" + id);
   },
+
   // Deletes the fighter with the given id
   deleteFighter: function(id) {
-    return axios.delete("/api/books/" + id);
+    return axios.delete("/api/fighter/" + id);
   },
   // Saves a fighter to the database
-  saveFighter: function(bookData) {
-    return axios.post("/api/books", bookData);
+  saveFighter: function(fighterData) {
+    return axios.post("/api/fighter", fighterData);
   }
 }

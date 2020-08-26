@@ -1,8 +1,9 @@
-img {
-    max-width: 200px;
+.profile-pic > img {
+    width: 250px;
 }
 
 .profile-pic {
-    padding: 40px;
-    margin: 20px auto;
+    padding: auto;
+    width: 280px;
+    margin: 0 auto;
 }

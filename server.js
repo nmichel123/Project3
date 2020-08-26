@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
       app.use(express.static("fightapp/public"));
   }
 
-app.use(routes)
+app.use("/API", routes)
 
 mongoose.connect(URI)
 
