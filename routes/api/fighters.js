@@ -1,5 +1,4 @@
 const router = require("express").Router()
-const db = require("../models")
 const profileController = require("../../controllers/profileControllers")
 
 router.route("/")
@@ -11,4 +10,4 @@ router.route("/:id")
     .put(profileController.update)
     .delete(profileController.remove)
 
-modeule.exports = router
+module.exports = router
