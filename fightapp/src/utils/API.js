@@ -2,9 +2,14 @@ import axios from "axios";
 
 export default {
   // Gets all fighters
+  // getFighters: function() {
+  //   return axios.get("/api/fighter");
+  // },
+
   getFighters: function() {
-    return axios.get("/api/fighter");
+    return axios.get("https://randomuser.me/api/?inc=picture&noinfo");
   },
+
   // Gets the fighter with the given id
   getFighter: function(id) {
     return axios.get("/api/fighter/" + id);
