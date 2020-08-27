@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Card from "../components/Card"
-import ProfilePic from "../components/ProfilePic/index";
+import MatchCard from "../components/MatchCard"
+// import ProfilePic from "../components/ProfilePic/index";
 
 
 class Match extends Component {
@@ -40,10 +40,12 @@ class Match extends Component {
 
   loadNextFight = () => {
 
-    API.getFight(Math.floor((2 ** 32) * Math.random()))
+    // Math.floor((2 ** 32) * Math.random())
+
+    API.getFighters()
       .then(res =>
         this.setState({
-          image: res.data.message
+          image: res.data.results[0].picture.large,
         })
       )
       .catch(err => console.log(err));
@@ -52,15 +54,15 @@ class Match extends Component {
   render() {
     return (
       <div>
-        <h1 className="text-center">Make New Friends</h1>
+        <h1 className="text-center">Make New Enemies!</h1>
         <h3 className="text-center">
 
           Fight!
 
         </h3>
-        <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
+        <MatchCard image={this.state.image} handleBtnClick={this.handleBtnClick} />
         <h1 className="text-center">
-          Made friends with {this.state.matchCount} pups so far!
+          Made {this.state.matchCount} new Enemies so far!
         </h1>
       </div>
     );
