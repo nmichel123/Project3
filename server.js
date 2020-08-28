@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const path = require("path")
+const path = require("path");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 9000;
-const URI = process.env.MONGODB_URI || "mongodb://localhost/fighters"
+const URI = process.env.MONGODB_URI || "mongodb://localhost/fighters";
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
