@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-.weight-input, .height-input {
+.weight-input, .height-input, .reach-input {
     width: 48px;
     margin-right: 10px;
 }
@@ -50,6 +50,17 @@
     clear: both;
   }
   
+  .geocoder {
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 10px;
+    }
+    .mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+    }
 
   @media screen and (max-width: 600px) {
     .col-25, .col-75, input[type=submit] {

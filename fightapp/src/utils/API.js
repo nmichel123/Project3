@@ -10,6 +10,11 @@ export default {
     return axios.get("https://randomuser.me/api/?inc=picture&noinfo");
   },
 
+  //useEffect to get all fighters
+  getAllFighters: function() {
+    return axios.get("api/fighter/")
+  },
+
   // Gets the fighter with the given id
   getFighter: function(id) {
     return axios.get("/api/fighter/" + id);

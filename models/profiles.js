@@ -16,6 +16,10 @@ const profileSchema = new Schema({
   location: {
     latitude: { type: Number },
     longitude: { type: Number }
+  },
+  userCred: {
+      userName: {type: String, required: true, unique: true},
+      passWord: {type: String, required: true, unique: true}
   }
 });
 

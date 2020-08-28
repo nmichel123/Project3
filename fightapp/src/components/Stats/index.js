@@ -1,21 +1,21 @@
 import React from "react"
 import "./style.css"
 
-function Stats() {
+function Stats({stats}) {
     return(
         <div class="stats">
             <ul class="stats-ul">
                 <li class="stat-item">
-                    <span><strong>Weight: </strong> 200lbs </span>
+                    <span><strong>Weight: </strong> {stats.weight} </span>
                 </li>
                 <li class="stat-item">
-                    <span><strong>Height: </strong> 5'10" </span>
+                    <span><strong>Height: </strong> {stats.height} </span>
                 </li>
                 <li class="stat-item">
-                    <span><strong>Division: </strong> Welter-Weight </span>
+                    <span><strong>Division: </strong> {stats.class} </span>
                 </li>
                 <li class="stat-item">
-                    <span><strong>Reach: </strong> 69" </span>
+                    <span><strong>Reach: </strong> {stats.reach} </span>
                 </li>
                 <li class="stat-item">
                     <span><strong>Win / Loss / Draw: </strong> 5 / 7 / 1</span>

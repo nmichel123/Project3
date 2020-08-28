@@ -22,6 +22,10 @@ function Home() {
         homeBtns.classList.add("hide")
     }
 
+    const loadProfile = e => {
+        API.getFighter()
+    }
+
     return(
     <div class="home-cont">
         <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet"></link>

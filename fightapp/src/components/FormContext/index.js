@@ -15,6 +15,10 @@ const FighterContext = React.createContext({
     latitude: "",
     longitude: ""
   },
+  userCred: {
+      userName: "",
+      passWord: ""
+  },
   handleInputChange: () => {}
 });
 
