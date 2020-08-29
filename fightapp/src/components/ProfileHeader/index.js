@@ -1,12 +1,12 @@
 import React from "react"
 import "./style.css"
 
-function ProfileHeader({firstName}) {
+function ProfileHeader({ firstName }) {
 
 
     return(
         <div>
-            <h1>FIGHTER: {firstName}</h1>
+            <h1>FIGHTER: { firstName }</h1>
         </div>
     )
 }

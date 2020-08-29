@@ -1,31 +1,31 @@
 const db = require("../models");
 
 module.exports = {
-    findAll: (req, res) => {
+    findAll: function(req, res) {
         db.Profile
-        .find(req.query)
+        .find({})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
     },
-    findById: (req, res) => {
+    findById: function(req, res) {
         db.Profile
         .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
     },
-    create: (req, res) => {
+    create: function(req, res) {
         db.Profile
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
     },
-    update: (req, res) => {
+    update: function(req, res) {
         db.Profile
         .findOneAndUpdate({ _id: req.params.id }, req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
     },
-    remove: (req, res) => {
+    remove: function(req, res) {
         db.Profile
         .findbyId({ _id: req.params.id })
         .then(dbModel => dbModel.remove())

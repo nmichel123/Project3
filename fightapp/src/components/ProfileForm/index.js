@@ -4,8 +4,10 @@ import "./style.css"
 import API from "../../utils/API";
 
 function ProfileForm() {
+    let count = 0;
     const inputRef = useRef()
     const [userLocation, setUserLocation] = useState({})
+    const [roster, setRoster] = useState([])
     locateUser()
     const [fighterData, dispatch] = useReducer((state, action) => {
         switch ( action.type ) {
@@ -13,7 +15,7 @@ function ProfileForm() {
                 return [
                     ...state,
                     {
-                        fightId: Math.floor ( 3 *  Math.random() ),
+                        fightId: Math.floor(3 * Math.random()),
                         firstName: document.querySelector(".first-name-input").value,
                         lastName: document.querySelector(".last-name-input").value,
                         image: "url",
@@ -32,6 +34,12 @@ function ProfileForm() {
                 ]
             default: return state
         }
+    }, {})
+
+    useEffect(() => {
+        API.getAllFighters()
+        .then(res => setRoster(res))
+        .catch(err => console.log(err))
     }, [])
 
     const formSubmit = e => {
@@ -40,14 +48,13 @@ function ProfileForm() {
         dispatch({
             type: 'add',
             name: inputRef.current.value
-          })
-          inputRef.current.value = ''
+            })
+            document.querySelectorAll('input').value = ""
 
-            console.log("submitting form..." + fighterData) // DEL unless verbose is enabled
-        
-            if(fighterData) {
+        if(fighterData) {
+            console.log("submitting form..." + JSON.stringify(fighterData[fighterData.length - 1])) // DEL unless verbose is enabled
         API.saveFighter(fighterData)
-        .then(res => setFighterData(res.data))
+        .then(res => console.log(res.data))
         .catch(err => console.log(err))
             }
         }
@@ -64,7 +71,7 @@ function ProfileForm() {
     // Javascript Geolocation Fcn to track user location
     function showPosition(position) {
        let coordinates = { latitude: position.coords.latitude, longitude: position.coords.longitude }
-            console.log("showPosition" + JSON.stringify(coordinates))
+            //console.log("showPosition" + JSON.stringify(coordinates))
         setUserLocation(coordinates)
     }
 

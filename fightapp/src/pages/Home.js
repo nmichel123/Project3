@@ -1,10 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
+import API from "../utils/API";
 import ProfileForm from "../components/ProfileForm"
 import LoginForm from "../components/LoginForm"
 import BackgroundVideo from "../components/BackgroundVideo/Rick_James_Montage.mp4"
 import "./style.css"
 
 function Home() {
+
+const roster = API.getAllFighters()
+        .then(res => {return res})
+        .catch(err => console.log(err))
+
+
+// Fcns to toggle sign-up and login windows
     const toggleSignUp = e => {
         e.preventDefault()
         var signUp = document.querySelector(".sign-up-form")
@@ -20,10 +28,6 @@ function Home() {
         login.classList.remove("hide")
         var homeBtns = document.querySelector(".home-btns")
         homeBtns.classList.add("hide")
-    }
-
-    const loadProfile = e => {
-        API.getFighter()
     }
 
     return(

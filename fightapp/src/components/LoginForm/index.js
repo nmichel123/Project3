@@ -1,4 +1,5 @@
 import React from "react"
+import API from "../../utils/API"
 
 const exitForm = e => {
     e.preventDefault()
@@ -9,7 +10,17 @@ const exitForm = e => {
 }
 
 const checkLogin = e => {
+    e.preventDefault()
     console.log("logging in...")
+    let roster = []
+    roster.push(API.getAllFighters())
+    var uName = document.querySelector('.username-input').value
+    console.log(roster, uName)
+    if(roster.indexOf(uName) !== -1 || uName == "admin" ) {
+        console.log("USER LOGGED IN!!")
+    } else {
+        alert("Invalid Username or Password!")
+    }
 }
 
 
