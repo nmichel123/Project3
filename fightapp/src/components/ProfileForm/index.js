@@ -36,11 +36,10 @@ function ProfileForm() {
         }
     }, {})
 
-    useEffect(() => {
-        API.getAllFighters()
-        .then(res => setRoster(res))
-        .catch(err => console.log(err))
-    }, [])
+
+    // await API.getAllFighters()
+    // .then(res => setRoster(res))
+    // .catch(err => console.log(err))
 
     const formSubmit = e => {
         e.preventDefault()

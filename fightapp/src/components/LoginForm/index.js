@@ -1,5 +1,5 @@
-import React from "react"
-import login from "../../utils"
+import React, {useReducer, useState} from "react"
+import login from "../../utils/login"
 import API from "../../utils/API"
 
 function loginRedux(state, action) {
@@ -24,7 +24,7 @@ function loginRedux(state, action) {
         case 'err':
             return {
                 ...state,
-                err: 'incorrect username or password',
+                err: 'Incorrect username or password',
                 isLoggedIn: false,
                 isChecking: false,
                 username: '',
@@ -57,14 +57,13 @@ function LoginForm() {
     const checkLogin = async e => {
         e.preventDefault()
         console.log("logging in...")
-        var uName = document.querySelector('.username-input').value
-        var pWord = document.querySelector('.password-input').value
+            //console.log(username, password)
         dispatch({ type: 'login' })
-
         try {
-            await login({ uName, pWord })
+            await login({ username, password }).then(exitForm())
             dispatch({ type: 'success' })
             document.querySelector('.nav-list-group').classList.remove('blur')
+            
         } catch (err) {
             dispatch({ type: 'err' })
         }
@@ -72,18 +71,26 @@ function LoginForm() {
 
     return(
     <div class="login-form form-group fight-card hide">
+        
             <form className="form">
             <div class="row">
             <button class="close-form" onClick={exitForm}>X</button>
+    {/* {isLoggedIn ? (<h3>Welcome { username }</h3>) : (err && <p class="error-message">{ err }</p>)} */}
             </div>
             <div class="col-25">
       <label for="username">USERNAME</label>
     </div>
             <div class="col-75">
         <input className="username-input"
-                name="userName"
+                name="username"
                 type="text"
                 placeholder="Username"
+                value={ username }
+                onChange={e => dispatch({
+                    type: 'input',
+                    inputName: 'username',
+                    payload: e.currentTarget.value,
+                })}
             />
                </div>
                <div class="col-25">
@@ -91,15 +98,26 @@ function LoginForm() {
     </div>
         <div class="col-75">
             <input className="password-input"
-                    name="passWord"
+                    name="password"
                     type="text"
                     placeholder="Password"
+                    value={ password }
+                    onChange={e => dispatch({
+                        type: 'input',
+                        inputName: 'password',
+                        payload: e.currentTarget.value,
+                    })} 
                 />
             </div>
             <br></br>
-            <button onClick={checkLogin} disabled={isChecking}>
+            
+            {isLoggedIn ? (
+                <button onClick={() => dispatch({ type: 'logout'})}>
+                    Log Out
+                </button>
+            ) : (<button onClick={checkLogin} disabled={isChecking}>
                 {isChecking ? 'Authenticating' : 'Log In'}
-            </button>
+            </button>)}
         </form>
     </div>
     )

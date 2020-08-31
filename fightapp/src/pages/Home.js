@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import API from "../utils/API";
 import ProfileForm from "../components/ProfileForm"
 import LoginForm from "../components/LoginForm"
@@ -6,12 +6,18 @@ import BackgroundVideo from "../components/BackgroundVideo/Rick_James_Montage.mp
 import "./style.css"
 
 function Home() {
+    const [roster, setRoster] = useState([])
 
-const roster = API.getAllFighters()
-        .then(res => {return res})
-        .catch(err => console.log(err))
-
-
+   async function loadFighters() {
+        try {
+            await API.getAllFighters()
+            .then(res => setRoster(res))
+        }  catch(err) {
+            console.log(err)
+        }
+   }
+    
+loadFighters()
 // Fcns to toggle sign-up and login windows
     const toggleSignUp = e => {
         e.preventDefault()
