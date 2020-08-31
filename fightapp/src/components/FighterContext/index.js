@@ -1,6 +1,7 @@
 import React from "react";
 
 const FighterContext = React.createContext({
+  username: '', password: '', isChecking: false, err: '', isLoggedIn: false,
   fightId: "",
   firstName: "",
   lastName: "",
@@ -19,7 +20,7 @@ const FighterContext = React.createContext({
       userName: "",
       passWord: ""
   },
-  handleInputChange: () => {}
+  handleBtnClick: () => {}
 });
 
 export default FighterContext;

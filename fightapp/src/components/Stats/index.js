@@ -1,27 +1,30 @@
 import React from "react"
 import "./style.css"
+import FighterContext from "../FighterContext"
+import { useContext } from "react"
 
-function Stats({stats}) {
-    return(
+function Stats() {
+    return(        
         <div class="stats">
             <ul class="stats-ul">
                 <li class="stat-item">
-                    <span><strong>Weight: </strong> {stats.weight} </span>
+                    <span><strong>Weight: </strong> 180 lbs </span>
                 </li>
                 <li class="stat-item">
-                    <span><strong>Height: </strong> {stats.height} </span>
+                    <span><strong>Height: </strong> 70 inches </span>
                 </li>
                 <li class="stat-item">
-                    <span><strong>Division: </strong> {stats.class} </span>
+                    <span><strong>Division: </strong> Middle-weight </span>
                 </li>
                 <li class="stat-item">
-                    <span><strong>Reach: </strong> {stats.reach} </span>
+                    <span><strong>Reach: </strong> 70 inches </span>
                 </li>
                 <li class="stat-item">
                     <span><strong>Win / Loss / Draw: </strong> 5 / 7 / 1</span>
                 </li>
             </ul>
         </div>
+       
     )
 }
 

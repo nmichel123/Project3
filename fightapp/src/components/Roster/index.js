@@ -1,16 +1,9 @@
-import react, { useState } from 'react'
-import API from './API'
+import React, {useState, useReducer} from "react"
+import API from "../../utils"
 
-let roster = []
+function roster() {
 
-// if(API.getAllFighters) {
-//         console.log('...fetching from DB')
-//     API.getAllFighters()
-//     .then(res => { roster = res})
-//     .catch(err => {console.log(err)})
-// }
-// else {
-roster = [{
+    return([{
     fightId: 1,
     firstName: "John",
     lastName: "Kim",
@@ -26,8 +19,8 @@ roster = [{
         longitude: -97.5917
       },
       userCred: {
-        username: "johnk9000",
-        password: "Password"
+        username: "unqiue-uName1",
+        password: "unique-pWord1"
       }
 },
 {
@@ -69,33 +62,7 @@ roster = [{
         username: "unqiue-uName3",
         password: "unique-pWord3"
       }
-}]
-// }
-async function login({ username, password }) {
-    //const [profile, setProfile] = useState({})
-
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            var uName = [] 
-            var pWord = []
-            for(let i = 0; i < roster.length; i++) {
-                uName.push(roster[i].userCred.username)
-                pWord.push(roster[i].userCred.password)
-            }
-            console.log(uName.indexOf(username), pWord.indexOf(password))
-
-            if( uName.indexOf(username) != -1 && uName.indexOf(username) == pWord.indexOf(password) || username == 'admin' && password == 'Welcome_1!') {
-                resolve()
-                var index = uName.indexOf(username)
-                console.log("USER LOGGED IN!!" + index)
-                //setProfile(roster[index])
-                return roster[index]
-            } else {
-                reject()
-                alert("Invalid Username or Password!")
-            }
-        }, 1500)
-    })
+}])
 }
 
-export default login
+export default roster

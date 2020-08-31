@@ -1,13 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./style.css"
+import FighterContext from "../FighterContext"
 
-function ProfileHeader({ firstName }) {
 
+function ProfileHeader() {
+   // const { firstName } = useContext(FighterContext)
 
     return(
-        <div>
-            <h1>FIGHTER: { firstName }</h1>
-        </div>
+<h1>FIGHTER: John</h1>
     )
 }
 

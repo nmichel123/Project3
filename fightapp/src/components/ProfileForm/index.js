@@ -1,10 +1,9 @@
 import React, { useState, useRef, useReducer, useEffect } from "react";
-import FormContext from "../FormContext"
+import FormContext from "../FighterContext"
 import "./style.css"
 import API from "../../utils/API";
 
 function ProfileForm() {
-    let count = 0;
     const inputRef = useRef()
     const [userLocation, setUserLocation] = useState({})
     const [roster, setRoster] = useState([])
@@ -35,11 +34,6 @@ function ProfileForm() {
             default: return state
         }
     }, {})
-
-
-    // await API.getAllFighters()
-    // .then(res => setRoster(res))
-    // .catch(err => console.log(err))
 
     const formSubmit = e => {
         e.preventDefault()
