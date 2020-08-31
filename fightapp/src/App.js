@@ -21,6 +21,7 @@ function App() {
         <Route exact path="/events" component={Events} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/match" component={MatchMaking} />
+        <Route exact path="/events" component={Events}/>
     </Router>
 </FighterContext.Provider>
   );

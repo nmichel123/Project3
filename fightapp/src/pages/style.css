@@ -1,5 +1,5 @@
 :root {
-    background: black;
+    background: linear-gradient(#333, black);
 }
 
 h1, h2, h3 {
@@ -155,7 +155,43 @@ form > button:hover {
   transition: 420ms ease-in-out; 
 }
 
+/* Scheduling (Events) Page Styling */
+.schedule-cont {
+  background-color: rgb(256, 256, 256, 0.8);
+  width: 640px;
+  margin: 40px auto;
+}
 
+.schedule-cont > h2 {
+  color: #333;
+  margin-top: 40px;
+}
+
+.fight-scheduler > .form-control {
+  padding: 6px 10px;
+    margin: 8px 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 75%;
+}
+
+.time-input {
+  width: 77px !important;
+    margin-right: 10px;
+}
+
+.fight-sub {
+  margin: 0px;
+  width: 100% !important;
+}
+
+.fight-sub:hover {
+  background: #333;
+  color: white;
+  transition: 420ms ease-in-out;
+  
+}
 
 /* Animation */
  @keyframes shake {

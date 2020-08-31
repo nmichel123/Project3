@@ -84,7 +84,8 @@ function Events () {
   }
   
   return (
-    <div>
+    <div className="schedule-cont">
+      <br></br>
         <h2>Schedule a Fight!</h2>
     <form className="fight-scheduler" onSubmit={handleSubmit}>
                 <br />
@@ -113,7 +114,7 @@ function Events () {
               />
               <br />
               <input
-                className="form-control"
+                className="form-control time-input"
                 type="number"
                 min="0"
                 max="31"
@@ -121,9 +122,9 @@ function Events () {
                 name="month"
                 onChange={e => setMonth(e.target.value)}
               />
-              <br />
+          
               <input
-                className="form-control"
+                className="form-control time-input"
                 type="number"
                 min="0"
                 max="31"
@@ -131,9 +132,9 @@ function Events () {
                 name="day"
                 onChange={e => setDay(e.target.value)}
               />
-              <br />
+            
               <input
-                className="form-control"
+                className="form-control time-input"
                 type="number"
                 min="0"
                 max="9"
@@ -141,9 +142,9 @@ function Events () {
                 name="start"
                 onChange={e => setStart(e.target.value)}
               />
-              <br />
+         
               <input
-                className="form-control"
+                className="form-control time-input"
                 type="number"
                 min="0"
                 max="9"
@@ -151,7 +152,7 @@ function Events () {
                 name="end"
                 onChange={e => setEnd(e.target.value)}
               />
-              <br />
+            
               <input
                 className="form-control"
                 type="text"

@@ -1,5 +1,3 @@
-
-import React from "react"
 import React, {useContext} from "react"
 import { Link } from "react-router-dom"
 import "./style.css"
@@ -15,7 +13,7 @@ function Nav() {
             <li class="nav-list-item"><Link to="/match" disabled={!isLoggedIn}> Match-Up </Link></li>
             <li class="nav-list-item"><Link to="/profile" disabled={!isLoggedIn}> Profile </Link>  </li>
             <li class="nav-list-item"><Link to="/social" disabled={!isLoggedIn}> Social </Link>  </li>
-            <li class="nav-list-item"> <Link to="#" disabled={!isLoggedIn}> Events </Link>  </li>
+            <li class="nav-list-item"> <Link to="/events" disabled={!isLoggedIn}> Events </Link>  </li>
             <li class="nav-list-item"><Link to="#" disabled={!isLoggedIn}> Edit Profile </Link>  </li>
         </ul>
     </div>
