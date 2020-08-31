@@ -1,5 +1,5 @@
 import React, { useState, useRef, useReducer, useEffect } from "react";
-import FormContext from "../FighterContext"
+import FighterContext from "../FighterContext"
 import "./style.css"
 import API from "../../utils/API";
 
