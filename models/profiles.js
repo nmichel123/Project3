@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { stringify } = require("querystring");
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
@@ -16,6 +15,10 @@ const profileSchema = new Schema({
   location: {
     latitude: { type: Number },
     longitude: { type: Number }
+  },
+  userCred: {
+      userName: {type: String, required: true},
+      password: {type: String, required: true}
   }
 });
 

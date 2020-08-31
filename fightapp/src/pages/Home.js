@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import API from "../utils/API";
+// import roster from "../components/Roster"
 import ProfileForm from "../components/ProfileForm"
 import LoginForm from "../components/LoginForm"
 import BackgroundVideo from "../components/BackgroundVideo/Rick_James_Montage.mp4"
 import "./style.css"
 
 function Home() {
+
+// Fcns to toggle sign-up and login windows
     const toggleSignUp = e => {
         e.preventDefault()
         var signUp = document.querySelector(".sign-up-form")
