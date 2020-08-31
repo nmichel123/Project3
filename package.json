@@ -6,18 +6,10 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-<<<<<<< HEAD
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd fightapp && npm run start",
-    "seed": "node scripts/seedDatabase.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-=======
     "start:dev": "concurrently \"nodemon --ignore 'fightapp/*'\" \"npm run fightapp\"",
     "fightapp": "cd fightapp && npm run start",
     "install": "cd fightapp && npm install",
     "build": "cd fightapp && npm run build",
->>>>>>> dcf7d3e8f765426addf48e88351444ca7830f43f
     "heroku-postbuild": "npm run build"
   },
   "author": "JK",
@@ -39,6 +31,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "express": "^4.17.1",
+    "google-calendar-react": "^1.0.0",
     "if-env": "^1.0.4",
     "lsof": "^0.1.0",
     "mongoose": "^5.3.16",
