@@ -7,7 +7,12 @@ import BackgroundVideo from "../components/BackgroundVideo/Rick_James_Montage.mp
 import "./style.css"
 
 function Home() {
-
+    // const [allFighters, setAllFighters] = useState([])
+    // useEffect(
+    //     API.getAllFighters()
+    //     .then(res => {setAllFighters(res)})
+    //     .catch(err => console.log(err))
+    // )
 // Fcns to toggle sign-up and login windows
     const toggleSignUp = e => {
         e.preventDefault()

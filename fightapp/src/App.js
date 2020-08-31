@@ -8,11 +8,11 @@ import Profile from "./pages/Profile"
 import MatchMaking from "./pages/MatchMaking"
 // Importing Components { Nav, Map} but not {Profile: {Aside, Form, Header, Pic}, Stats}
 import Nav from "./components/Nav"
-import FighterContext from "./components/FighterContext"
+import  FighterContext from "./components/FighterContext"
 
 function App() {
   return (
-    <FighterContext.Provider>
+ <FighterContext.Provider>
     <Router>
         <Nav />
         <Route exact path="/" component={Home} />
@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/match" component={MatchMaking} />
     </Router>
-    </FighterContext.Provider>
+</FighterContext.Provider>
   );
 }
 

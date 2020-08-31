@@ -98,7 +98,7 @@ form {
   justify-items: space-evenly;
 }
 
-form > button {
+.add-comment > form > button {
   height: 36px;
   width: 80px;
   padding: auto;
