@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react';
 
-function Social() {
-    return(
-        <div>
-            
-        </div>
-    )
+function Social () {
+  return (
+    <div>
+
+    </div>
+  )
 }
 
-export default Social
+export default Social;

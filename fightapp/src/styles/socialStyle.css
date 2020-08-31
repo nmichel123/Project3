@@ -1,0 +1,16 @@
+.fight-sub {
+    color: rgb(44, 43, 29);
+    width: 200px;
+    font-size: 18px;
+    padding: 20px 40px;
+    margin: auto;
+    border: 2px solid transparent;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+    transition: 420ms ease-in-out;
+}
+
+.fight-scheduler {
+    margin: auto
+}
