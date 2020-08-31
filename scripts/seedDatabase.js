@@ -19,6 +19,10 @@ const fighterSeed = [
           location: {
             latitude: 30.543813,
             longitude: -97.5917
+          },
+          userCred: {
+            username: "unqiue-uName1",
+            password: "unique-pWord1"
           }
     },
     {
@@ -30,11 +34,15 @@ const fighterSeed = [
             weight: 225,
             height: 78,
             reach: 77,
-            class: "heavy-weight"
+            class: "middle-weight"
           },
           location: {
             latitude: 33,
             longitude: -99
+          },
+          userCred: {
+            username: "unqiue-uName2",
+            password: "unique-pWord2"
           }
     },
     {
@@ -46,11 +54,15 @@ const fighterSeed = [
             weight: 155,
             height: 65,
             reach: 64,
-            class: "welter-weight"
+            class: "middle-weight"
           },
           location: {
             latitude: 33,
             longitude: -99
+          },
+          userCred: {
+            username: "unqiue-uName3",
+            password: "unique-pWord3"
           }
     }
 ]
